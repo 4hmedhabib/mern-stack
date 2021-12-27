@@ -1,0 +1,133 @@
+// Baska
+const namesOfPeople = [
+    "Xasan",
+    "Xamda",
+    "Caasha",
+    "Nuur",
+    "Maxamed",
+    "Jamaal"
+];
+
+const totalPrice = 8500
+
+const pricesBelow2000Names = [
+    {
+        "name": "Caasha",
+        "price": 0
+    },
+    {
+        "name": "Nuur",
+        "price": 1500
+    },
+    {
+        "name": "Maxamed",
+        "price": 1000
+    }
+]
+
+const prices2000Names =[
+    {
+        "name": "Xasan",
+        "price": 2000
+    },
+    {
+        "name": "Xamda",
+        "price": 2000
+    },
+    {
+        "name": "Jamaal",
+        "price": 2000
+    }
+]
+
+const pricesUnpaidFull = [
+    {
+        "name": "Caasha",
+        "price": 0
+    },
+    {
+        "name": "Nuur",
+        "price": 1500
+    },
+    {
+        "name": "Maxamed",
+        "price": 1000
+    }
+]
+
+const totalPersonsPaidAll =  8500
+
+const totalPersonsUnpaidAll = 3500
+
+
+// Shop
+const totalQuantityInShop = 113
+
+const totalItemsInshop =  8
+
+const itemsQuantityAboveTwenty = [
+    {
+        "item": "Caano Lis",
+        "price": 6000,
+        "quantity": 24
+    },
+    {
+        "item": "Fanta",
+        "price": 3500,
+        "quantity": 50
+    }
+]
+
+const totalQuantityAboveTwenty = 2
+
+const totalPriceOfAllQuanitity = 629000
+
+const totalPriceOfAvailableItems = 629000
+
+const itemsUnavailableInShop =  [
+    {
+        "item": "Buskud Cake",
+        "price": 1000,
+        "quantity": 0
+    },
+    {
+        "item": "Jawaan Sonkor",
+        "price": 120000,
+        "quantity": 0
+    }
+]
+
+const itemsAvailableInShop = [
+    {
+        "item": "Kaluun",
+        "price": 9000,
+        "quantity": 10
+    },
+    {
+        "item": "Mongo Sharaab",
+        "price": 5000,
+        "quantity": 8
+    },
+    {
+        "item": "Caano Maraaci",
+        "price": 5000,
+        "quantity": 20
+    },
+    {
+        "item": "Caano Lis",
+        "price": 6000,
+        "quantity": 24
+    },
+    {
+        "item": "Fanta",
+        "price": 3500,
+        "quantity": 50
+    },
+    {
+        "item": "Saliid",
+        "price": 80000,
+        "quantity": 1
+    }
+]
+
+

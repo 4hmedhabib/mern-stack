@@ -1,0 +1,263 @@
+/* Element Selector */
+/* ===================== */
+
+/* h1 {
+  background-color: blue;
+  color: white;
+  padding: 15px;
+}
+
+p {
+  background-color: green;
+  color: white;
+  padding: 15px;
+} */
+
+/* Class Selector */
+/* ==================== */
+/* .tiigsi {
+  background-color: blue;
+  color: white;
+  padding: 15px;
+}
+
+.html {
+  background-color: red;
+  color: white;
+  padding: 15px;
+} */
+
+/* ID Selector */
+/* ================ */
+/* #blog-detail {
+  background-color: gray;
+  color: white;
+  padding: 15px;
+} */
+
+/* Universal Selector */
+/* ======================= */
+/* * {
+  padding: 0;
+  margin: 0;
+} */
+
+/* Grouping */
+/* =============== */
+/* .tiigsi,
+.par-2,
+.par-1,
+.html {
+  background-color: green;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+} */
+
+/* Colors */
+/* ==================== */
+/* .tiigsi {
+  color: rgb(238, 15, 15);
+  /* R G B */
+/* } */
+
+/* Background
+ ===================/* */
+/* .par-1 {
+  /* background-color: #f00; */
+/* height: 550px;
+  background-image: url("./images/harimacado.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background: url("./images/harimacado.jpg") no-repeat center fixed;
+  color: red;
+  padding: 10px; */
+/* } */
+
+/* Borders */
+/* ============ */
+.tiigsi {
+  /* border-width: 5px;
+  border-color: blue;
+  border-style: double; */
+  padding: 10px;
+  border: 10px double red;
+  text-align: center;
+  text-decoration: underline;
+  /* font-weight: normal; */
+}
+
+/* Box Modal */
+.box-1,
+.box-3 {
+  background-color: gray;
+  color: white;
+  border: 2px solid blue;
+  /* padding: 16px; */
+  /* margin: 16px; */
+}
+
+/* Padding */
+.box-2 {
+  background-color: green;
+  color: white;
+  border: 2px solid red;
+  /* padding-top: 10px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 80px; */
+
+  /* padding: 20px; */
+  /* All of them 20px */
+
+  /* padding: 10px 80px 60px 90px; */
+  /* Top Right Bottom Left*/
+
+  /* padding: 10px 20px; */
+  /* Top & Bottom || Right & Left*/
+}
+
+/* Margin */
+.box-2 {
+  /* margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 18px;
+  margin-bottom: 12px; */
+
+  /* margin: 16px; */
+  /* All sides 16px */
+
+  /* margin: 10px 8px 12px 20px; */
+  /* Top Right Bottom Left*/
+
+  /* margin: 10px 30px; */
+  /* Top & Bottom || Right & Left*/
+}
+
+.box-1 {
+  width: 480px;
+  height: 50px;
+  margin-bottom: 10px;
+  padding: 0px 50px;
+  box-sizing: border-box;
+}
+
+.text {
+  border: 5px dotted blue;
+  text-align: justify;
+  /* left center right justifiy*/
+  text-transform: capitalize;
+  /* uppercase lowercase capitalize */
+
+  text-decoration: none;
+  /* line-through underline */
+
+  letter-spacing: 2px;
+
+  line-height: 30px;
+}
+
+.text {
+  font-family: Arial;
+  font-size: 16px;
+  /* font-weight: bold; */
+  /* bold lighter bolder normal regular */
+
+  font-weight: 700;
+  /* 100 200 300 400 500 600 700 800 900 */
+}
+
+/* Links */
+a {
+  color: green;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* a:hover {
+  color: white;
+  background: blue;
+  border-radius: 30px;
+  padding: 15px;
+} */
+
+/* a:visited {
+  color: red;
+} */
+
+.ul-style {
+  list-style-type: square;
+  /* square circle lower-roman upper-roman lower-alpha upper-alpha decimal decimal-leading-zero */
+  /* list-style-image: url("./images/css_box_model.png"); */
+  list-style-position: inside;
+  border: 2px solid black;
+  list-style: circle outside;
+}
+
+li {
+  border: 2px solid blue;
+  margin: 5px 5px 8px 0px;
+}
+
+/* border-collpase: collapse */
+
+/* Display */
+/* Inline */
+/* Block */
+/* Inline-block */
+
+.block {
+  background: blue;
+  color: white;
+  display: inline-block;
+  width: 100px;
+  height: 200px;
+}
+
+.inline {
+  background: red;
+  color: white;
+}
+
+/* Positions */
+.container {
+  width: 300px;
+  height: 900px;
+  border: 1px solid blue;
+  margin-top: 50px;
+  position: relative;
+}
+
+.box {
+  background: green;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+/* Static */
+
+/* Relative */
+
+/* Absolute */
+
+/* Fixed */
+
+/* Stiky */
+
+/* Z-index */
+
+/* Shadows */
+
+/* CSS Specificity */
+
+.iibadal {
+  color: red;
+}
+
+#kasoo {
+  color: blueviolet;
+}
