@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.card {
+  @apply mx-5 my-10 shadow-lg border-t-4 border-green-500 rounded-lg w-96 max-w-sm relative hover:shadow-2xl hover:cursor-pointer;
+}
