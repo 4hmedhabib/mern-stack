@@ -8,6 +8,8 @@
 # testing
 /coverage
 
+/first-project.zip
+
 # production
 /build
 
