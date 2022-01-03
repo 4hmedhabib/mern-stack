@@ -1,6 +1,6 @@
-import AsideLeft from "./components/AsideLeft";
-import AsideRight from "./components/AsideRight";
-import Expenses from "./components/Expenses";
+import AsideLeft from "./components/Layout/AsideLeft";
+import AsideRight from "./components/Layout/AsideRight";
+import Expenses from "./components/Expenses/Expenses";
 
 const App = () => {
   const expenses = [

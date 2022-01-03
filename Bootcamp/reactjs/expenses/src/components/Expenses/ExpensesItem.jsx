@@ -1,6 +1,6 @@
 import ExpensesDate from "./ExpensesDate";
-import CardItem from "./CardItem";
-import Wrap from "../hoc/Wrap";
+import CardItem from "../UI/CardItem";
+import Wrap from "../../hoc/Wrap";
 
 const ExpensesItem = (props) => {
   return (

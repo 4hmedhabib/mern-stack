@@ -1,4 +1,4 @@
-import CardItem from "./CardItem";
+import CardItem from "../UI/CardItem";
 
 const AsideRight = () => {
   return (
