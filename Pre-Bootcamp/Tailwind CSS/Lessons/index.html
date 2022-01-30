@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS</title>
+    <!-- Tailwind Setup -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        .card {
+            @apply mt-5 mx-4 shadow-lg p-5 rounded bg-red-500 text-white sm:bg-blue-500
+        }
+        .pStyle {
+            @apply text-lg tracking-wide leading-9 text-justify capitalize mx-4 p-3 text-white rounded-lg bg-[url('./Blanbaalis.jpg')] bg-no-repeat bg-cover bg-center
+        }
+        .btnStyle {
+            @apply bg-blue-500 text-white rounded-lg px-3 py-1 shadow-lg ml-5 hover:bg-white hover:text-blue-500 border-2 border-blue-500
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Fonts -->
+    <h1 class="text-4xl font-bold tracking-wider text-center my-4 mx-4  py-4 text-white bg-green-800 rounded-lg">
+        Welcome
+        Tailwind
+        CSS Crash
+        Course</h1>
+    <p class="pStyle">
+        Lorem ipsum
+        dolor, sit amet
+        consectetur
+        adipisicing elit.
+        Temporibus
+        corporis
+        dolores ex enim
+        blanditiis vero
+        repudiandae dolore earum excepturi. Nobis eos ipsam mollitia reiciendis dolor nemo maiores id dolorem magni.</p>
+
+    <!-- Display -->
+    <!-- Inline -->
+    <!-- Block -->
+    <!-- Inline-Block -->
+    <!-- Flex -->
+    <p class="mt-5 mx-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore libero est sunt, amet
+        reprehenderit esse eum?
+        Tenetur expedita velit aliquid delectus repellendus illo qui quis maxime animi temporibus. <span
+            class='font-bold bg-blue-200 px-1'>Vitae,
+            cumque</span>
+        excepturi accusantium suscipit aspernatur hic quae quas maxime provident possimus!</p>
+
+    <!-- Flex -->
+    <div class="text-white flex  bg-indigo-100">
+        <div class="bg-blue-500 w-28 h-14">01</div>
+        <div class="bg-red-500 w-28 h-14">02</div>
+        <div class="bg-green-500 w-28 h-14">03</div>
+        <div class="bg-purple-500 w-28 h-14">04</div>
+    </div>
+
+    <!-- Responsive -->
+    <div
+        class="box mt-5 bg-green-500 sm:bg-red-500 sm:text-white md:bg-blue-500 md:text-red-500 lg:bg-indigo-900 xl:bg-pink-900 2xl:bg-yellow-500 h-96 mb-14 ">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam cupiditate ipsam molestias iusto similique
+        illo nesciunt itaque. Consequuntur vitae ratione eaque nesciunt eos quaerat delectus, praesentium, reiciendis
+        animi dolores ipsa.
+    </div>
+
+    <!-- Cards -->
+    <div class="card">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit nisi fuga modi veritatis ad? Inventore minus
+            harum, tempore, debitis amet vitae aperiam magnam sed odit sunt tempora, numquam impedit ducimus?</p>
+    </div>
+    <br>
+
+    <button class="btnStyle">
+        Click here
+    </button>
+
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+
+</html>

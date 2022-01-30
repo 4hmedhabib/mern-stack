@@ -1,0 +1,36 @@
+.container {
+  overflow-x: auto;
+}
+
+table,
+th,
+td {
+  width: 800px;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  border-collapse: collapse;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+th,
+td {
+  width: auto;
+  font-family: Arial;
+  text-align: left;
+}
+
+th {
+  background: rgb(52, 163, 0);
+  color: #fff;
+  border-inline: 1px solid white;
+}
+
+tr:hover {
+  background: rgb(241, 241, 241);
+  cursor: pointer;
+}
+
+tr:nth-child(even) {
+  background: #f1f1f1;
+}
