@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;600;700;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.card-white {
+  @apply bg-white m-3 px-3 py-5 shadow-lg shadow-gray-100 rounded-md;
+}
