@@ -1,7 +1,8 @@
 import "./App.css";
 import Hello from "./Hello";
 import Header from "./Header";
-import React from "react";
+import UseState from "./useState";
+import Form from "./Form";
 
 // Components
 //  Class Component
@@ -18,6 +19,14 @@ const App = () => {
       <Hello property={person1}></Hello>
       <Hello property={person2}></Hello>
       <Hello property={person3}></Hello>
+      <br></br>
+      <br></br>
+      <br></br>
+      <UseState />
+      <br />
+      <br />
+      <br />
+      <Form />
     </div>
   );
 };
