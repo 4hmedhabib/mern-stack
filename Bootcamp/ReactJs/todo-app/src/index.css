@@ -5,5 +5,5 @@
 @tailwind utilities;
 
 .card-white {
-  @apply bg-white m-3 px-3 py-5 shadow-lg shadow-gray-100 rounded-md;
+  @apply bg-white m-3 px-3 py-4 shadow-lg shadow-gray-100 rounded-md;
 }
