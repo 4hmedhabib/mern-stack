@@ -1,11 +1,13 @@
 import Header from "./Header";
 import Content from "./Content/Content";
 
-const Main = () => {
+const Main = (props) => {
+  console.log("Main Props", props);
+
   return (
     <section id="main" className="grow font-nunito">
       <Header></Header>
-      <Content></Content>
+      <Content tasks={props.tasks}></Content>
     </section>
   );
 };

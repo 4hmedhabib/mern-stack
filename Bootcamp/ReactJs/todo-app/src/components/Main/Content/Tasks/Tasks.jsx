@@ -1,6 +1,10 @@
 import Task from "./Task";
 
-const Tasks = () => {
+const Tasks = (props) => {
+  console.log("Tasks Props", props);
+
+  const tasks = props.data;
+
   return (
     // Tasks
     <div
@@ -14,7 +18,17 @@ const Tasks = () => {
         id="lists"
         className="w-full flex flex-col justify-center items-center"
       >
-        <Task />
+        {tasks.map((task) => {
+          return (
+            <Task
+              key={task.id}
+              title={task.title}
+              category={task.category}
+              date={task.date}
+              status={task.status}
+            />
+          );
+        })}
       </div>
     </div>
   );

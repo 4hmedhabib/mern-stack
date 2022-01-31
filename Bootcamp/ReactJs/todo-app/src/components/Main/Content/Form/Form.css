@@ -1,0 +1,15 @@
+.input-group {
+  @apply flex flex-col justify-center items-start mx-2 gap-1;
+}
+
+.input-control {
+  @apply bg-gray-100 w-full py-1 px-3 rounded shadow shadow-gray-200 max-w-md focus:outline-none focus:bg-white focus:border focus:shadow-md focus:border-gray-100 focus:shadow-gray-100 text-lg tracking-wider;
+}
+
+.input-label {
+  @apply font-semibold tracking-wider;
+}
+
+.btn-add {
+  @apply bg-blue-500 px-3 w-32 text-lg font-bold tracking-wider text-white rounded-full py-1 hover:bg-blue-600 hover:shadow-gray-200 hover:shadow-lg;
+}

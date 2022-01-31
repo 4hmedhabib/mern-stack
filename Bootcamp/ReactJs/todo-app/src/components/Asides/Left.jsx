@@ -3,7 +3,7 @@ const Left = () => {
     //   Left Side
     <aside
       id="left"
-      className="w-20 lg:w-28 xl:w-80 flex-none shadow-lg shadow-gray-200 rounded-tr-lg bg-white font-nunito"
+      className="w-20 lg:w-28 xl:w-80 flex-none shadow-lg shadow-gray-200 rounded-tr-lg bg-white font-nunito hidden sm:block"
     >
       <div id="logo" className="flex items-center justify-center">
         <div className=" my-5 mx-3 flex justify-center items-center">

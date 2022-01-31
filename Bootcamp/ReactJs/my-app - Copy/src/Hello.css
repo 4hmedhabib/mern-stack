@@ -1,0 +1,8 @@
+.hello {
+  background-color: tomato;
+  margin: 8px 40px;
+  padding: 3px 0px;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+}

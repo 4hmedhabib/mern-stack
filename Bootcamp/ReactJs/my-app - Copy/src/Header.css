@@ -1,0 +1,8 @@
+.header {
+  background-color: rgb(57, 57, 221);
+  color: white;
+  margin: 40px;
+  padding: 5px 0px;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
