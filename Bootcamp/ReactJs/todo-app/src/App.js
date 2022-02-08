@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import Right from "./components/Asides/Right";
-import Left from "./components/Asides/Left";
+import Right from "./components/Asides/Right/Right";
+import Left from "./components/Asides/Left/Left";
 import Main from "./components/Main/Main";
 
 const App = () => {
@@ -79,6 +79,14 @@ const App = () => {
     });
   };
 
+  const deleteTaskComplete = (taskId) => {
+    setTasks((prevState) => {
+      const prevUpdate = prevState.filter((task) => task.id !== taskId);
+
+      return prevUpdate;
+    });
+  };
+
   return (
     <div className="flex min-h-screen w-screen bg-gray-50">
       <Left></Left>
@@ -88,7 +96,11 @@ const App = () => {
         onTaskCompleted={taskCompletedHandler}
         onDeleteTask={deleteTaskHandler}
       ></Main>
-      <Right onUndoTask={undoTaskHandler} data={tasks}></Right>
+      <Right
+        onDeleteTaskComplete={deleteTaskComplete}
+        onUndoTask={undoTaskHandler}
+        data={tasks}
+      ></Right>
     </div>
   );
 };

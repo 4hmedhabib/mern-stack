@@ -1,3 +1,5 @@
+import Categories from "./Categories/Categories";
+
 const Left = () => {
   return (
     //   Left Side
@@ -5,7 +7,10 @@ const Left = () => {
       id="left"
       className="w-20 lg:w-28 xl:w-80 flex-none shadow-lg shadow-gray-200 rounded-tr-lg bg-white font-nunito hidden sm:block"
     >
-      <div id="logo" className="flex items-center justify-center">
+      <div
+        id="logo"
+        className="flex items-center justify-center shadow-md shadow-gray-100 "
+      >
         <div className=" my-5 mx-3 flex justify-center items-center">
           <img
             src="/images/todo-logo.png"
@@ -20,6 +25,8 @@ const Left = () => {
           </p>
         </div>
       </div>
+
+      <Categories />
     </aside>
   );
 };

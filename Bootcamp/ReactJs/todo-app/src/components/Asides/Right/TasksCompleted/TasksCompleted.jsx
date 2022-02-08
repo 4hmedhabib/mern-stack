@@ -9,6 +9,10 @@ const TasksCompleted = (props) => {
     props.onUndoTask(id);
   };
 
+  const deleleTaskCompeleted = (id) => {
+    props.onDeleteTaskComplete(id);
+  };
+
   return (
     <section id="completed-tasks" className="mt-5 mx-2 p-2 font-nunito">
       <div className="flex items-center mb-2">
@@ -29,6 +33,7 @@ const TasksCompleted = (props) => {
             date={task.date}
             status={task.status}
             onUndoTask={isUndoTask}
+            onDeleteTask={deleleTaskCompeleted}
           />
         ))}
       </div>

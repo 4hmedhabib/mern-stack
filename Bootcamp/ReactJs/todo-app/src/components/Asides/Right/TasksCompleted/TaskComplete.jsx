@@ -1,9 +1,13 @@
-import { CheckIcon, ReplyIcon } from "@heroicons/react/solid";
-import { CalendarIcon } from "@heroicons/react/outline";
+import { ReplyIcon } from "@heroicons/react/solid";
+import { CalendarIcon, TrashIcon } from "@heroicons/react/outline";
 
 const TaskComplete = (props) => {
   const isUndoTask = () => {
     props.onUndoTask(props.id);
+  };
+
+  const isDeletTask = () => {
+    props.onDeleteTask(props.id);
   };
 
   return (
@@ -30,12 +34,20 @@ const TaskComplete = (props) => {
               <span className="capitalize font-bold tracking-wider text-yellow-500">
                 {props.status}
               </span>
-              <span
-                className="flex gap-1 text-red-500 hover:bg-red-500 hover:text-white px-2 cursor-pointer  hover:rounded-full"
-                onClick={isUndoTask}
-              >
-                <ReplyIcon className="w-5 h5 " /> Undo
-              </span>
+              <div className="flex gap-2">
+                <span
+                  className="flex gap-1 text-blue-500 hover:bg-blue-600 hover:text-white px-2 cursor-pointer  hover:rounded-full"
+                  onClick={isUndoTask}
+                >
+                  <ReplyIcon className="w-5 h5 " /> Undo
+                </span>
+                <span
+                  className="flex gap-1 text-red-500 hover:bg-red-600 hover:text-white px-2 cursor-pointer  hover:rounded-full"
+                  onClick={isDeletTask}
+                >
+                  <TrashIcon className="w-5 h5 " /> Remove
+                </span>
+              </div>
             </div>
           </div>
         </div>
