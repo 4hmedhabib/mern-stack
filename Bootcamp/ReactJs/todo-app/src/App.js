@@ -20,12 +20,16 @@ const App = () => {
     },
   ];
 
-  console.log("App ", tasks);
+  const saveTaskHandler = (data) => {
+    tasks.push(data);
+
+    console.log(tasks);
+  };
 
   return (
     <div className="flex min-h-screen w-screen bg-gray-50">
       <Left></Left>
-      <Main tasks={tasks}></Main>
+      <Main onUploadData={saveTaskHandler} tasks={tasks}></Main>
       <Right></Right>
     </div>
   );

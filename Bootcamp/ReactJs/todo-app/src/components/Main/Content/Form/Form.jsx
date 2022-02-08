@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Form.css";
 
-const Form = () => {
+const Form = (props) => {
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [date, setDate] = useState("");
@@ -25,12 +25,15 @@ const Form = () => {
 
   const submitFormHandler = (e) => {
     e.preventDefault();
-    console.log({
-      title,
-      status,
-      date,
-      category,
-    });
+
+    const myFormData = {
+      title: title,
+      category: category,
+      date: date,
+      status: status,
+    };
+
+    props.onAddTask(myFormData);
   };
 
   return (

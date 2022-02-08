@@ -1,8 +1,6 @@
 import Task from "./Task";
 
 const Tasks = (props) => {
-  console.log("Tasks Props", props);
-
   const tasks = props.data;
 
   return (

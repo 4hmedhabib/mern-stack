@@ -2,8 +2,6 @@ import { CheckIcon } from "@heroicons/react/solid";
 import { CalendarIcon, TrashIcon } from "@heroicons/react/outline";
 
 const Task = (props) => {
-  console.log("Task Props", props);
-
   return (
     // task 1
     <div
