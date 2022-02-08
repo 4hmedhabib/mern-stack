@@ -64,7 +64,18 @@ const App = () => {
     setTasks((prevState) => {
       const task = prevState.find((task) => task.id === taskId);
 
-      console.log(task);
+      const taskUpdate = {
+        ...task,
+        isCompleted: false,
+        status: "in progress",
+      };
+
+      const taskIndex = prevState.findIndex((task) => task.id === taskId);
+
+      const prevUpdate = [...prevState];
+      prevUpdate[taskIndex] = taskUpdate;
+
+      return prevUpdate;
     });
   };
 
