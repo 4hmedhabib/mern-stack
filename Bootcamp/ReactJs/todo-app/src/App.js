@@ -1,9 +1,11 @@
+import { useState } from "react";
+
 import Right from "./components/Asides/Right";
 import Left from "./components/Asides/Left";
 import Main from "./components/Main/Main";
 
 const App = () => {
-  const tasks = [
+  const data = [
     {
       id: "t-01",
       title: "Going Work",
@@ -20,10 +22,12 @@ const App = () => {
     },
   ];
 
-  const saveTaskHandler = (data) => {
-    tasks.push(data);
+  const [tasks, setTasks] = useState(data);
 
-    console.log(tasks);
+  const saveTaskHandler = (data) => {
+    setTasks((prevState) => {
+      return [...prevState, data];
+    });
   };
 
   return (

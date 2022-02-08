@@ -34,6 +34,11 @@ const Form = (props) => {
     };
 
     props.onAddTask(myFormData);
+
+    setTitle("");
+    setCategory("");
+    setDate("");
+    setStatus("");
   };
 
   return (
@@ -111,8 +116,11 @@ const Form = (props) => {
             <option value="completed">Completed</option>
           </select>
         </div>
-        <div className="flex justify-center w-full md:col-span-2 mt-3">
+        <div className="flex justify-center w-full md:col-span-2 mt-3 gap-3">
           <button className="btn-add">Add</button>
+          <button onClick={props.onCloseForm} className="btn-cancel">
+            Cancel
+          </button>
         </div>
       </form>
     </section>

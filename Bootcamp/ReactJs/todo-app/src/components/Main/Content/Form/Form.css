@@ -13,3 +13,7 @@
 .btn-add {
   @apply bg-blue-500 px-3 w-32 text-lg font-bold tracking-wider text-white rounded-full py-1 hover:bg-blue-600 hover:shadow-gray-200 hover:shadow-lg;
 }
+
+.btn-cancel {
+  @apply bg-red-500 px-3 w-32 text-lg font-bold tracking-wider text-white rounded-full py-1 hover:bg-red-600 hover:shadow-gray-200 hover:shadow-lg;
+}
