@@ -21,7 +21,7 @@ const Category = (props) => {
         style={{ background: props.color }}
         className="w-10 h-10  rounded-full flex justify-center items-center"
       >
-        <span className="text-white font-semibold">{props.total}</span>
+        <span className="text-white font-semibold">{props.icon}</span>
       </div>
     </div>
   );

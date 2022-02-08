@@ -1,9 +1,32 @@
+import { useState } from "react";
 import Task from "./Task";
 import { PlusIcon } from "@heroicons/react/solid";
 import Empty from "../../../Empty/Empty";
+import Filter from "./Filter";
 
 const Tasks = (props) => {
+  const [category, setCategory] = useState("all");
+  const [date, setDate] = useState("");
+
+  const changeCategoryHandler = (category) => {
+    setCategory(category);
+  };
+
+  const changeDateHandler = (date) => {
+    setDate(date);
+  };
+
   const tasks = props.data.filter((task) => task.isCompleted === false);
+
+  const filterByCategory = tasks.filter((task) =>
+    category === "all"
+      ? task
+      : task.category.toLowerCase() === category.toLocaleLowerCase()
+  );
+
+  const filteredTasks = filterByCategory.filter((task) =>
+    date === "" ? task : date === task.date
+  );
 
   return (
     // Tasks
@@ -24,45 +47,19 @@ const Tasks = (props) => {
         </div>
       )}
 
-      <div className="border-b pb-2 mb-3 max-w-lg w-full mt-5 gap-3 flex flex-col sm:flex-row justify-between items-center">
-        <h1 className="text-left  font-bold text-2xl ">Tasks</h1>
-        <div className="flex  items-center gap-3">
-          <div className="flex flex-col">
-            <label className="text-sm text-gray-400" htmlFor="date">
-              Date
-            </label>
-            <input
-              type="date"
-              name="date"
-              id="date"
-              className="px-2 py-1 rounded-md outline-none"
-            />
-          </div>
-          <div className="flex flex-col">
-            <label className="text-sm text-gray-400" htmlFor="category">
-              Category
-            </label>
-            <select
-              name="category"
-              id="category"
-              required
-              className="rounded-md px-2 py-1 outline-none"
-            >
-              <option value="all">All</option>
-              <option value="work">Work</option>
-              <option value="learning">Learning</option>
-              <option value="trip">Trip</option>
-              <option value="sports">Sports</option>
-            </select>
-          </div>
-        </div>
-      </div>
+      <Filter
+        onChangeCategory={changeCategoryHandler}
+        category={category}
+        onChangeDate={changeDateHandler}
+        date={date}
+      />
+
       <div
         id="lists"
         className="w-full flex flex-col justify-center items-center"
       >
-        {tasks.length > 0 ? (
-          tasks.map((task) => {
+        {filteredTasks.length > 0 ? (
+          filteredTasks.map((task) => {
             return (
               <Task
                 key={task.id}

@@ -1,4 +1,12 @@
 import React from "react";
+import {
+  AcademicCapIcon,
+  ChartPieIcon,
+  GlobeIcon,
+  CakeIcon,
+  BriefcaseIcon,
+  ViewGridIcon,
+} from "@heroicons/react/outline";
 import Category from "./Category";
 
 const Categories = (props) => {
@@ -21,17 +29,45 @@ const Categories = (props) => {
   );
 
   return (
-    <section id="overview" className="px-3 m-3 mt-20">
-      <h1 className="text-xl font-bold capitalize tracking-wider  text-gray-400 mb-2">
-        Categories
-      </h1>
+    <section id="overview" className="px-3 m-3 mt-14 hidden xl:block">
+      <div className="flex gap-2">
+        <ChartPieIcon className="w-6 h-6 text-blue-500" />
+        <h1 className="text-xl font-bold capitalize tracking-wider  text-gray-400 mb-2">
+          Tasks Categories
+        </h1>
+      </div>
       <hr />
       <div id="list" className="mt-5">
-        <Category title="General" total={general.length} color="#2563eb" />
-        <Category title="Sports" total={sports.length} color="#65a30d" />
-        <Category title="Learning" total={learning.length} color="#0891b2" />
-        <Category title="Trip" total={trip.length} color="#ca8a04" />
-        <Category title="Work" total={work.length} color="#e11d48" />
+        <Category
+          title="General"
+          total={general.length}
+          color="#2563eb"
+          icon={<ViewGridIcon className="w-5" />}
+        />
+        <Category
+          title="Sports"
+          total={sports.length}
+          color="#65a30d"
+          icon={<GlobeIcon className="w-5" />}
+        />
+        <Category
+          title="Learning"
+          total={learning.length}
+          color="#0891b2"
+          icon={<AcademicCapIcon className="w-5" />}
+        />
+        <Category
+          title="Trip"
+          total={trip.length}
+          color="#ca8a04"
+          icon={<CakeIcon className="w-5" />}
+        />
+        <Category
+          title="Work"
+          total={work.length}
+          color="#e11d48"
+          icon={<BriefcaseIcon className="w-5" />}
+        />
       </div>
     </section>
   );

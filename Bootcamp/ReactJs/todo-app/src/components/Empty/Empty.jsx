@@ -6,7 +6,7 @@ const Empty = () => {
     <div className="my-4 flex flex-col items-center justify-center opacity-80">
       <ExclamationIcon className="text-gray-400 w-16 h-16" />
       <h1 className="text-2xl p-3 font-nunito font-bold tracking-wider text-gray-400">
-        No Data
+        No Data Found
       </h1>
     </div>
   );

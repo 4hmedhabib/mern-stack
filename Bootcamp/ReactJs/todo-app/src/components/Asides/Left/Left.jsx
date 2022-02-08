@@ -5,7 +5,7 @@ const Left = (props) => {
     //   Left Side
     <aside
       id="left"
-      className="w-20 lg:w-28 xl:w-80 flex-none shadow-lg shadow-gray-200 rounded-tr-lg bg-white font-nunito hidden sm:block"
+      className="w-20 lg:w-28 xl:w-80 flex-none shadow-lg shadow-gray-200 rounded-tr-lg bg-white font-nunito hidden sm:block max-h-screen overflow-y-auto"
     >
       <div
         id="logo"

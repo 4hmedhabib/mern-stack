@@ -15,7 +15,7 @@ const App = () => {
       isCompleted: false,
     },
     {
-      id: "t-03",
+      id: "t-02",
       title: "Building Web Application",
       date: "2022-02-01",
       category: "Work",
@@ -23,7 +23,7 @@ const App = () => {
       isCompleted: false,
     },
     {
-      id: "t-04",
+      id: "t-03",
       title: "Going Daallo Mountain",
       date: "2022-01-01",
       category: "Trip",
@@ -31,12 +31,28 @@ const App = () => {
       isCompleted: false,
     },
     {
-      id: "t-02",
+      id: "t-04",
       title: "Playing Football",
       date: "2022-02-01",
       category: "Sports",
       status: "completed",
       isCompleted: true,
+    },
+    {
+      id: "t-05",
+      title: "Going University",
+      date: "2022-01-01",
+      category: "Learning",
+      status: "in progress",
+      isCompleted: false,
+    },
+    {
+      id: "t-06",
+      title: "Learning MERN Stack Bootcamp",
+      date: "2022-01-01",
+      category: "Learning",
+      status: "in progress",
+      isCompleted: false,
     },
   ];
 

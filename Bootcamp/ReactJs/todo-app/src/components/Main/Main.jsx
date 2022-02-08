@@ -7,7 +7,10 @@ const Main = (props) => {
   };
 
   return (
-    <section id="main" className="grow font-nunito">
+    <section
+      id="main"
+      className="grow font-nunito max-h-screen overflow-y-auto"
+    >
       <Header></Header>
       <Content
         onUploadData={uploadDataHandler}

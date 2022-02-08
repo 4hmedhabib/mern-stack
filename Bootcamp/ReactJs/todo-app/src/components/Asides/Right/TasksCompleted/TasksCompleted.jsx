@@ -18,7 +18,7 @@ const TasksCompleted = (props) => {
     <section id="completed-tasks" className="mt-5 mx-2 p-2 font-nunito">
       <div className="flex items-center mb-2">
         <ClipboardCheckIcon className="w-6 h-6 text-yellow-500" />
-        <h1 className="text-2xl ml-2 font-semibold tracking-wider">
+        <h1 className="text-xl font-bold ml-2 tracking-wider text-gray-400">
           Tasks Completed
         </h1>
       </div>
