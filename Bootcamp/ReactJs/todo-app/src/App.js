@@ -15,10 +15,26 @@ const App = () => {
       isCompleted: false,
     },
     {
-      id: "t-02",
-      title: "Learning MERN Stack Bootcamp",
+      id: "t-03",
+      title: "Building Web Application",
       date: "2022-02-01",
-      category: "Learning",
+      category: "Work",
+      status: "in progress",
+      isCompleted: false,
+    },
+    {
+      id: "t-04",
+      title: "Going Daallo Mountain",
+      date: "2022-01-01",
+      category: "Trip",
+      status: "in progress",
+      isCompleted: false,
+    },
+    {
+      id: "t-02",
+      title: "Playing Football",
+      date: "2022-02-01",
+      category: "Sports",
       status: "completed",
       isCompleted: true,
     },
@@ -89,7 +105,7 @@ const App = () => {
 
   return (
     <div className="flex min-h-screen w-screen bg-gray-50">
-      <Left></Left>
+      <Left data={tasks}></Left>
       <Main
         onUploadData={saveTaskHandler}
         tasks={tasks}

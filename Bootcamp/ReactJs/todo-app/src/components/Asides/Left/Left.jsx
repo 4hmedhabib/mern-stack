@@ -1,6 +1,6 @@
 import Categories from "./Categories/Categories";
 
-const Left = () => {
+const Left = (props) => {
   return (
     //   Left Side
     <aside
@@ -26,7 +26,7 @@ const Left = () => {
         </div>
       </div>
 
-      <Categories />
+      <Categories data={props.data} />
     </aside>
   );
 };

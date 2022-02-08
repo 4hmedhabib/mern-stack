@@ -1,5 +1,6 @@
 import { ClipboardCheckIcon } from "@heroicons/react/outline";
 import React from "react";
+import Empty from "../../../Empty/Empty";
 import TaskComplete from "./TaskComplete";
 
 const TasksCompleted = (props) => {
@@ -24,18 +25,22 @@ const TasksCompleted = (props) => {
       <hr />
 
       <div>
-        {tasksCompleted.map((task) => (
-          <TaskComplete
-            key={task.id}
-            id={task.id}
-            title={task.title}
-            category={task.category}
-            date={task.date}
-            status={task.status}
-            onUndoTask={isUndoTask}
-            onDeleteTask={deleleTaskCompeleted}
-          />
-        ))}
+        {tasksCompleted.length > 0 ? (
+          tasksCompleted.map((task) => (
+            <TaskComplete
+              key={task.id}
+              id={task.id}
+              title={task.title}
+              category={task.category}
+              date={task.date}
+              status={task.status}
+              onUndoTask={isUndoTask}
+              onDeleteTask={deleleTaskCompeleted}
+            />
+          ))
+        ) : (
+          <Empty />
+        )}
       </div>
     </section>
   );
