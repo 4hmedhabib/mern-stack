@@ -2,7 +2,7 @@ import Task from "./Task";
 import { PlusIcon } from "@heroicons/react/solid";
 
 const Tasks = (props) => {
-  const tasks = props.data;
+  const tasks = props.data.filter((task) => task.isCompleted === false);
 
   return (
     // Tasks
@@ -34,10 +34,13 @@ const Tasks = (props) => {
           return (
             <Task
               key={task.id}
+              id={task.id}
               title={task.title}
               category={task.category}
               date={task.date}
               status={task.status}
+              isTaskCompleted={props.isTaskCompleted}
+              isTaskDeleted={props.isTaskDeleted}
             />
           );
         })}

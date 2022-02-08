@@ -65,6 +65,7 @@ const Form = (props) => {
             id="title"
             value={title}
             onChange={titleChangeHanlder}
+            required
           />
         </div>
         <div className="input-group">
@@ -76,6 +77,7 @@ const Form = (props) => {
             value={category}
             onChange={categoryChangeHandler}
             name="category"
+            required
           >
             <option disabled value="">
               Choose Category
@@ -97,6 +99,7 @@ const Form = (props) => {
             className="input-control"
             value={date}
             onChange={dateChangeHandler}
+            required
           />
         </div>
         <div className="input-group">
@@ -108,6 +111,7 @@ const Form = (props) => {
             className="input-control"
             value={status}
             onChange={statusChangeHandler}
+            required
           >
             <option disabled value="">
               Choose Status

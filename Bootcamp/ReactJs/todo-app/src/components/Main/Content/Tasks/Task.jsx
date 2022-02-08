@@ -2,6 +2,14 @@ import { CheckIcon } from "@heroicons/react/solid";
 import { CalendarIcon, TrashIcon } from "@heroicons/react/outline";
 
 const Task = (props) => {
+  const taskCompleted = () => {
+    props.isTaskCompleted(props.id);
+  };
+
+  const taskDeleted = () => {
+    props.isTaskDeleted(props.id);
+  };
+
   return (
     // task 1
     <div
@@ -10,7 +18,9 @@ const Task = (props) => {
     >
       <div id="left-side">
         <div id="category">
-          <h5 className="font-semibold text-blue-600">{props.category}</h5>
+          <h5 className="font-semibold text-blue-600 capitalize">
+            {props.category}
+          </h5>
         </div>
         <div id="content" className="mt-1 ">
           <h1 className="text-xl font-bold tracking-wider">{props.title}</h1>
@@ -26,8 +36,14 @@ const Task = (props) => {
         </div>
       </div>
       <div id="right-side" className="flex flex-col gap-3">
-        <CheckIcon className="w-6 h-6 cursor-pointer text-green-500"></CheckIcon>
-        <TrashIcon className="w-6 h-6 cursor-pointer text-red-500"></TrashIcon>
+        <CheckIcon
+          className="w-6 h-6 cursor-pointer text-green-500"
+          onClick={taskCompleted}
+        ></CheckIcon>
+        <TrashIcon
+          className="w-6 h-6 cursor-pointer text-red-500"
+          onClick={taskDeleted}
+        ></TrashIcon>
       </div>
     </div>
   );

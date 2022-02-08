@@ -6,12 +6,15 @@ const Main = (props) => {
     props.onUploadData(data);
   };
 
-  console.log(props.tasks);
-
   return (
     <section id="main" className="grow font-nunito">
       <Header></Header>
-      <Content onUploadData={uploadDataHandler} tasks={props.tasks}></Content>
+      <Content
+        onUploadData={uploadDataHandler}
+        tasks={props.tasks}
+        onTaskCompleted={props.onTaskCompleted}
+        onDeleteTask={props.onDeleteTask}
+      ></Content>
     </section>
   );
 };

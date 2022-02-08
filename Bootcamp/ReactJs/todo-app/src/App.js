@@ -12,6 +12,7 @@ const App = () => {
       date: "2022-01-01",
       category: "Work",
       status: "in progress",
+      isCompleted: false,
     },
     {
       id: "t-02",
@@ -19,9 +20,11 @@ const App = () => {
       date: "2022-02-01",
       category: "Learning",
       status: "completed",
+      isCompleted: true,
     },
   ];
 
+  // Tesks data
   const [tasks, setTasks] = useState(data);
 
   const saveTaskHandler = (data) => {
@@ -30,11 +33,51 @@ const App = () => {
     });
   };
 
+  const taskCompletedHandler = (taskId) => {
+    setTasks((prevState) => {
+      const task = prevState.find((task) => task.id === taskId);
+
+      const taskUpdate = {
+        ...task,
+        isCompleted: true,
+        status: "completed",
+      };
+
+      const taskIndex = prevState.findIndex((task) => task.id === taskId);
+
+      const prevUpdate = [...prevState];
+      prevUpdate[taskIndex] = taskUpdate;
+
+      return prevUpdate;
+    });
+  };
+
+  const deleteTaskHandler = (taskId) => {
+    setTasks((prevState) => {
+      const prevUpdate = prevState.filter((task) => task.id !== taskId);
+
+      return prevUpdate;
+    });
+  };
+
+  const undoTaskHandler = (taskId) => {
+    setTasks((prevState) => {
+      const task = prevState.find((task) => task.id === taskId);
+
+      console.log(task);
+    });
+  };
+
   return (
     <div className="flex min-h-screen w-screen bg-gray-50">
       <Left></Left>
-      <Main onUploadData={saveTaskHandler} tasks={tasks}></Main>
-      <Right></Right>
+      <Main
+        onUploadData={saveTaskHandler}
+        tasks={tasks}
+        onTaskCompleted={taskCompletedHandler}
+        onDeleteTask={deleteTaskHandler}
+      ></Main>
+      <Right onUndoTask={undoTaskHandler} data={tasks}></Right>
     </div>
   );
 };

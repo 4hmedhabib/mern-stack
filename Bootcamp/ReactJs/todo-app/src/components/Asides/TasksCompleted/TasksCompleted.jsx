@@ -2,23 +2,12 @@ import { ClipboardCheckIcon } from "@heroicons/react/outline";
 import React from "react";
 import TaskComplete from "./TaskComplete";
 
-const TasksCompleted = () => {
-  const data = [
-    {
-      id: "t-01",
-      title: "Going Work",
-      date: "2022-01-01",
-      category: "Work",
-      status: "in progress",
-    },
-    {
-      id: "t-02",
-      title: "Learning MERN Stack Bootcamp",
-      date: "2022-02-01",
-      category: "Learning",
-      status: "completed",
-    },
-  ];
+const TasksCompleted = (props) => {
+  const tasksCompleted = props.data.filter((task) => task.isCompleted === true);
+
+  const isUndoTask = (id) => {
+    props.onUndoTask(id);
+  };
 
   return (
     <section id="completed-tasks" className="mt-5 mx-2 p-2 font-nunito">
@@ -31,12 +20,15 @@ const TasksCompleted = () => {
       <hr />
 
       <div>
-        {data.map((task) => (
+        {tasksCompleted.map((task) => (
           <TaskComplete
+            key={task.id}
+            id={task.id}
             title={task.title}
             category={task.category}
             date={task.date}
             status={task.status}
+            onUndoTask={isUndoTask}
           />
         ))}
       </div>

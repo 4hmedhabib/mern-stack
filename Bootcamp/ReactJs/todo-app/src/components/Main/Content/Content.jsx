@@ -3,7 +3,7 @@ import Tasks from "./Tasks/Tasks";
 import Form from "./Form/Form";
 
 const Content = (props) => {
-  const [showForm, setShowForm] = useState(true);
+  const [showForm, setShowForm] = useState(false);
 
   const addTaskHandler = (data) => {
     const id = Math.floor(Math.random() * 1000);
@@ -14,9 +14,18 @@ const Content = (props) => {
       category: data.category,
       status: data.status,
       date: data.date,
+      isCompleted: false,
     };
 
     props.onUploadData(taskData);
+  };
+
+  const isTaskCompleted = (id) => {
+    props.onTaskCompleted(id);
+  };
+
+  const isTaskDeleted = (id) => {
+    props.onDeleteTask(id);
   };
 
   const showFormHandler = () => {
@@ -39,6 +48,8 @@ const Content = (props) => {
         showForm={showForm}
         onShowForm={showFormHandler}
         data={props.tasks}
+        isTaskCompleted={isTaskCompleted}
+        isTaskDeleted={isTaskDeleted}
       />
     </main>
   );
