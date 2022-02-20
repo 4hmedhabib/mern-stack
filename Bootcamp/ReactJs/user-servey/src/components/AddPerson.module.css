@@ -1,0 +1,19 @@
+.addPerson {
+  @apply mx-5 sm:mx-auto sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl left-0 right-0;
+}
+
+.input_group {
+  @apply flex flex-col my-3;
+}
+
+.input_label {
+  @apply font-semibold tracking-wider text-slate-600 mb-1;
+}
+
+.input_control {
+  @apply bg-blue-50/50 py-1 rounded-md outline-none px-3 focus:bg-blue-50 focus:font-semibold focus:shadow-lg focus:shadow-slate-500/5 focus:py-2 tracking-wider;
+}
+
+.button_container {
+  @apply mt-4 mb-2 flex md:max-w-xs mx-auto;
+}
