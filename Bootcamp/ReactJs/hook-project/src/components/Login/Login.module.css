@@ -1,0 +1,27 @@
+.login {
+  @apply font-nunito mx-5 sm:max-w-md md:max-w-lg flex flex-col mt-10 items-center justify-center sm:mx-auto;
+}
+
+.login_header {
+  @apply text-2xl text-cyan-900 tracking-wider  font-bold text-center mt-3 mb-5;
+}
+
+.login_form {
+  @apply w-full flex flex-col items-center justify-center;
+}
+
+.input_group {
+  @apply flex flex-col sm:max-w-md mx-3 my-2 px-2 py-1 w-full;
+}
+
+.input_control {
+  @apply bg-cyan-900/5 w-full hover:bg-cyan-900/10 focus:bg-cyan-900/10 outline-none rounded-md px-3 py-2;
+}
+
+.input_label {
+  @apply ml-1 mb-1 text-cyan-900 font-semibold tracking-wider;
+}
+
+.btn_container {
+  @apply w-full max-w-xs mt-3;
+}
