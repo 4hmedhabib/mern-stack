@@ -1,0 +1,23 @@
+.backdrop {
+  @apply bg-slate-900/40 w-screen h-screen z-10 absolute left-0 right-0 top-0 bottom-0 cursor-pointer;
+}
+
+.modal {
+  @apply z-20 absolute top-20 left-0 right-0 mx-5 sm:mx-auto sm:max-w-lg;
+}
+
+.title {
+  @apply text-xl bg-red-500 text-white px-3 py-1 rounded-md font-bold tracking-wider;
+}
+
+.content {
+  @apply text-lg  px-4 my-3 tracking-wider;
+}
+
+.buttonContainer {
+  @apply flex justify-center px-3 py-2 mt-5;
+}
+
+.btn {
+  @apply bg-red-500 px-3 py-1 rounded-md text-lg text-white tracking-wider;
+}

@@ -9,7 +9,7 @@ const User = (props) => {
           <h1 className="text-lg font-bold tracking-wider">
             {props.user.fullName}
           </h1>
-          <span className="bg-blue-500 px-2 rounded-full text-white tracking-wider text-xs absolute top-2 -right-24">
+          <span className="bg-blue-500 px-2 rounded-full text-white tracking-wider text-xs absolute top-2 -right-16">
             {props.user.username}
           </span>
         </div>

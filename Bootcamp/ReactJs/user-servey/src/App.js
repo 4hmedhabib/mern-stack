@@ -19,7 +19,7 @@ const App = () => {
   };
 
   return (
-    <section className="bg-blue-50 h-screen w-screen pt-16 font-nunito">
+    <section className="bg-blue-50 h-screen w-screen font-nunito">
       <AddPerson onAddPerson={createPersonHandler} />
       <UserLists users={userLists} />
     </section>

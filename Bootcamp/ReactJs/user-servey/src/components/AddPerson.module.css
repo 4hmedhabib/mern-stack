@@ -1,5 +1,5 @@
 .addPerson {
-  @apply mx-5 sm:mx-auto sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl left-0 right-0;
+  @apply mx-5 sm:mx-auto sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl left-0 right-0 pt-20;
 }
 
 .input_group {
