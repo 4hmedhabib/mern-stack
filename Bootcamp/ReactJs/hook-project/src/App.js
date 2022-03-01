@@ -7,8 +7,6 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [clicked, setClicked] = useState(0);
 
-  console.log("app.js is running....");
-
   useEffect(() => {
     if (localStorage.getItem("isLoggedIn") === "1") {
       setIsLoggedIn(true);

@@ -6,21 +6,17 @@ import classes from "./Login.module.css";
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [emailIsValid, setEmailIsValid] = useState(false);
-  const [passwordIsValid, setPasswordIsValid] = useState(false);
   const [formIsValid, setFormIsValid] = useState(false);
 
   useEffect(() => {
-    setFormIsValid(emailIsValid && passwordIsValid);
-  }, [emailIsValid, passwordIsValid]);
+    setFormIsValid(email.includes("@") && password.trim().length >= 6);
+  }, [email, password]);
 
   const emailChangeHandler = (e) => {
-    setEmailIsValid(email.includes("@"));
     setEmail(e.target.value);
   };
 
   const passwordChangeHandler = (e) => {
-    setPasswordIsValid(password.trim().length >= 6);
     setPassword(e.target.value);
   };
 
