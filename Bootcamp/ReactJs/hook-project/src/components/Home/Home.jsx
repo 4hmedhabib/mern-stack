@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../UI/Button/Button";
 import Card from "../UI/Card/Card";
 
-const Home = () => {
+const Home = (props) => {
   return (
     <div className="flex justify-center mt-20 font-nunito">
       <div className="w-full sm:max-w-xl md:max-w-lg">
@@ -17,7 +17,7 @@ const Home = () => {
             Voluptatum ex voluptas aperiam consectetur nisi.
           </p>
           <div className="w-ful max-w-sm left-0 right-0 mx-auto mt-7">
-            <Button>Go Back</Button>
+            <Button onClick={props.onClicked}>Go Back</Button>
           </div>
         </Card>
       </div>
