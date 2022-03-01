@@ -1,13 +1,13 @@
 import { useState } from "react";
-import AddPerson from "./components/AddPerson";
-import UserLists from "./components/UserLists";
+import AddPerson from "./components/Persons/AddPerson";
+import PersonLists from "./components/Persons/PersonList";
 
 const App = () => {
-  const [userLists, setUserLists] = useState([]);
+  const [personLists, setPersonLists] = useState([]);
 
   const createPersonHandler = (data) => {
     const id = Math.random() * 1000;
-    setUserLists((prevPersons) => {
+    setPersonLists((prevPersons) => {
       return [
         ...prevPersons,
         {
@@ -21,7 +21,7 @@ const App = () => {
   return (
     <section className="bg-blue-50 h-screen w-screen font-nunito">
       <AddPerson onAddPerson={createPersonHandler} />
-      <UserLists users={userLists} />
+      <PersonLists persons={personLists} />
     </section>
   );
 };
