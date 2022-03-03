@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useReducer } from "react";
-import { act } from "react-dom/test-utils";
 import Button from "../UI/Button/Button";
 import Card from "../UI/Card/Card";
 import classes from "./Login.module.css";
@@ -21,7 +20,7 @@ const emailReducer = (state, action) => {
   if (action.type === "EMAILBLUR") {
     return {
       value: state.value,
-      isValid: action.payload.includes("@"),
+      isValid: state.value.includes("@"),
       isBlured: true,
     };
   }
@@ -29,18 +28,49 @@ const emailReducer = (state, action) => {
   return initEmail;
 };
 
+const initPassword = {
+  value: "",
+  isValid: false,
+  isBlured: false,
+};
+
+const passwordReducer = (state, action) => {
+  if (action.type === "PASSWORDCHANGE") {
+    return {
+      value: action.payload,
+      isValid: action.payload.trim().length >= 6,
+      isBlured: state.isBlured,
+    };
+  }
+  if (action.type === "PASSWORDBLUR") {
+    return {
+      value: state.value,
+      isValid: state.value.trim().length >= 6,
+      isBlured: true,
+    };
+  }
+
+  return initPassword;
+};
+
 const Login = (props) => {
   // const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  // const [password, setPassword] = useState("");
   const [formIsValid, setFormIsValid] = useState(false);
 
   const [email, emailDispatch] = useReducer(emailReducer, initEmail);
 
-  // password.trim().length >= 6
+  const [password, passwordDispatch] = useReducer(
+    passwordReducer,
+    initPassword
+  );
+
+  const { isValid: emailIsValid } = email;
+  const { isValid: passwordIsValid } = password;
 
   useEffect(() => {
-    setFormIsValid(email.isValid);
-  }, [email]);
+    setFormIsValid(emailIsValid && passwordIsValid);
+  }, [emailIsValid, passwordIsValid]);
 
   const emailChangeHandler = (e) => {
     emailDispatch({ type: "EMAILCHANGE", payload: e.target.value });
@@ -48,16 +78,21 @@ const Login = (props) => {
   };
 
   const passwordChangeHandler = (e) => {
-    setPassword(e.target.value);
+    passwordDispatch({ type: "PASSWORDCHANGE", payload: e.target.value });
+    // setPassword(e.target.value);
+  };
+
+  const emailBlurHandler = (e) => {
+    emailDispatch({ type: "EMAILBLUR" });
+  };
+
+  const passwordBlurHandler = (e) => {
+    passwordDispatch({ type: "PASSWORDBLUR" });
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
     props.onLogin(email, password);
-  };
-
-  const emailBlurHandler = (e) => {
-    emailDispatch({ type: "EMAILBLUR", payload: e.target.value });
   };
 
   return (
@@ -78,7 +113,7 @@ const Login = (props) => {
               id="email"
               name="email"
               className={
-                formIsValid === false && email.isBlured
+                email.isValid === false && email.isBlured
                   ? classes.input_control_error
                   : classes.input_control
               }
@@ -95,9 +130,14 @@ const Login = (props) => {
               type="password"
               id="password"
               name="password"
-              className={classes.input_control}
+              className={
+                password.isValid === false && password.isBlured
+                  ? classes.input_control_error
+                  : classes.input_control
+              }
               onChange={passwordChangeHandler}
-              value={password}
+              value={password.value}
+              onBlur={passwordBlurHandler}
             />
           </div>
           <div className={classes.btn_container}>
