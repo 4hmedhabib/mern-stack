@@ -1,11 +1,11 @@
 import { Fragment, useState, useEffect } from "react";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
+import UseReducer from "./components/hooks/useReducer";
 import Login from "./components/Login/Login";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [clicked, setClicked] = useState(0);
 
   useEffect(() => {
     if (localStorage.getItem("isLoggedIn") === "1") {
@@ -26,10 +26,11 @@ const App = () => {
   return (
     <Fragment>
       <Header isLoggedIn={isLoggedIn} onLogout={logoutHandler} />
-      <main>
+      {/* <main>
         {isLoggedIn && <Home />}
         {!isLoggedIn && <Login onLogin={loginHandler} />}
-      </main>
+      </main> */}
+      <UseReducer />
     </Fragment>
   );
 };
