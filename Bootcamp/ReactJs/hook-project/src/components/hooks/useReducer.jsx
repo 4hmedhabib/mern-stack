@@ -4,15 +4,15 @@ import { MinusIcon } from "@heroicons/react/solid";
 import classes from "./style.module.css";
 
 const initialValue = {
-  count: 10,
+  count: 0,
 };
 
 const reducerFn = (state, action) => {
   if (action.type === "INCREMENT") {
-    return { count: state + 1 };
+    return { count: state.count + 1 };
   }
   if (action.type === "DECREMENT") {
-    return { count: state - 1 };
+    return { count: state.count - 1 };
   }
   if (action.type === "RESET") {
     return initialValue;

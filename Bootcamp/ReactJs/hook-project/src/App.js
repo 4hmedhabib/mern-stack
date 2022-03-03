@@ -26,11 +26,11 @@ const App = () => {
   return (
     <Fragment>
       <Header isLoggedIn={isLoggedIn} onLogout={logoutHandler} />
-      {/* <main>
+      <main>
         {isLoggedIn && <Home />}
         {!isLoggedIn && <Login onLogin={loginHandler} />}
-      </main> */}
-      <UseReducer />
+      </main>
+      {/* <UseReducer /> */}
     </Fragment>
   );
 };

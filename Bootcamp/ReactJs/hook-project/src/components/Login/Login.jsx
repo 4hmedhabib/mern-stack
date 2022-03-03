@@ -1,19 +1,50 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
+import { act } from "react-dom/test-utils";
 import Button from "../UI/Button/Button";
 import Card from "../UI/Card/Card";
 import classes from "./Login.module.css";
 
+const initEmail = {
+  value: "",
+  isValid: false,
+  isBlured: false,
+};
+
+const emailReducer = (state, action) => {
+  if (action.type === "EMAILCHANGE") {
+    return {
+      value: action.payload,
+      isValid: action.payload.includes("@"),
+      isBlured: state.isBlured,
+    };
+  }
+  if (action.type === "EMAILBLUR") {
+    return {
+      value: state.value,
+      isValid: action.payload.includes("@"),
+      isBlured: true,
+    };
+  }
+
+  return initEmail;
+};
+
 const Login = (props) => {
-  const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [formIsValid, setFormIsValid] = useState(false);
 
+  const [email, emailDispatch] = useReducer(emailReducer, initEmail);
+
+  // password.trim().length >= 6
+
   useEffect(() => {
-    setFormIsValid(email.includes("@") && password.trim().length >= 6);
-  }, [email, password]);
+    setFormIsValid(email.isValid);
+  }, [email]);
 
   const emailChangeHandler = (e) => {
-    setEmail(e.target.value);
+    emailDispatch({ type: "EMAILCHANGE", payload: e.target.value });
+    // setEmail(e.target.value);
   };
 
   const passwordChangeHandler = (e) => {
@@ -22,12 +53,11 @@ const Login = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-
-    if (!formIsValid) {
-      return;
-    }
-
     props.onLogin(email, password);
+  };
+
+  const emailBlurHandler = (e) => {
+    emailDispatch({ type: "EMAILBLUR", payload: e.target.value });
   };
 
   return (
@@ -47,9 +77,14 @@ const Login = (props) => {
               type="email"
               id="email"
               name="email"
-              className={classes.input_control}
+              className={
+                formIsValid === false && email.isBlured
+                  ? classes.input_control_error
+                  : classes.input_control
+              }
               onChange={emailChangeHandler}
-              value={email}
+              onBlur={emailBlurHandler}
+              value={email.value}
             />
           </div>
           <div className={classes.input_group}>
@@ -68,6 +103,7 @@ const Login = (props) => {
           <div className={classes.btn_container}>
             <Button
               style={formIsValid ? " " : " opacity-25 cursor-not-allowed"}
+              disabled={!formIsValid}
             >
               Login
             </Button>

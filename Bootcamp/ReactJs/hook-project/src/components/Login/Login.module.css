@@ -25,3 +25,7 @@
 .btn_container {
   @apply w-full max-w-xs mt-3;
 }
+
+.input_control_error {
+  @apply bg-red-100 w-full hover:bg-red-900/10 focus:bg-red-500/10 rounded-md px-3 py-2 border border-red-500 outline-none;
+}
