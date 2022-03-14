@@ -29,8 +29,8 @@ const App = () => {
       <main>
         {isLoggedIn && <Home />}
         {!isLoggedIn && <Login onLogin={loginHandler} />}
-        <UseContext />
       </main>
+      {/* <UseContext /> */}
       {/* <UseReducer /> */}
     </Fragment>
   );
