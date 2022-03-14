@@ -1,6 +1,7 @@
 import { Fragment, useState, useEffect } from "react";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
+import UseContext from "./components/hooks/useContext";
 import Login from "./components/Login/Login";
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
       <main>
         {isLoggedIn && <Home />}
         {!isLoggedIn && <Login onLogin={loginHandler} />}
+        <UseContext />
       </main>
       {/* <UseReducer /> */}
     </Fragment>
