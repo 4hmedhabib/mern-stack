@@ -1,7 +1,6 @@
 import { Fragment, useState, useEffect } from "react";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
-import UseReducer from "./components/hooks/useReducer";
 import Login from "./components/Login/Login";
 
 const App = () => {
