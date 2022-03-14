@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import AuthContext from "../../store/auth-state";
 import Button from "../UI/Button/Button";
 import Card from "../UI/Card/Card";
 
 const Home = (props) => {
+  const authCtx = useContext(AuthContext);
+
   return (
     <div className="flex justify-center mt-20 font-nunito">
       <div className="w-full sm:max-w-xl md:max-w-lg">
@@ -17,7 +20,7 @@ const Home = (props) => {
             Voluptatum ex voluptas aperiam consectetur nisi.
           </p>
           <div className="w-ful max-w-sm left-0 right-0 mx-auto mt-7">
-            <Button onClick={props.onClicked}>Go Back</Button>
+            <Button onClick={authCtx.logout}>Go Back</Button>
           </div>
         </Card>
       </div>
